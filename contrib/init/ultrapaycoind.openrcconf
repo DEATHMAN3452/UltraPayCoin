@@ -1,0 +1,26 @@
+# /etc/conf.d/ultrapaycoind: config file for /etc/init.d/ultrapaycoind
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/ultrapaycoin/ultrapaycoin.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/ultrapaycoind"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/ultrapaycoind.pid"
+
+# Where to write ultrapaycoind data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/ultrapaycoind"
+
+# User and group to own ultrapaycoind process
+#BITCOIND_USER="ultrapaycoin"
+#BITCOIND_GROUP="ultrapaycoin"
+
+# Path to ultrapaycoind executable
+#BITCOIND_BIN="/usr/bin/ultrapaycoind"
+
+# Nice value to run ultrapaycoind under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

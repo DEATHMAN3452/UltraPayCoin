@@ -1,0 +1,26 @@
+[Unit]
+Description=UltraPayCoin's distributed currency daemon
+After=network.target
+
+[Service]
+User=ultrapaycoin
+Group=ultrapaycoin
+
+Type=forking
+PIDFile=/var/lib/ultrapaycoind/ultrapaycoind.pid
+
+ExecStart=/usr/bin/ultrapaycoind -daemon -pid=/var/lib/ultrapaycoind/ultrapaycoind.pid \
+          -conf=/etc/ultrapaycoin/ultrapaycoin.conf -datadir=/var/lib/ultrapaycoind
+
+ExecStop=-/usr/bin/ultrapaycoin-cli -conf=/etc/ultrapaycoin/ultrapaycoin.conf \
+         -datadir=/var/lib/ultrapaycoind stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

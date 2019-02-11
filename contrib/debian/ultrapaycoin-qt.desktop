@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Ultrapaycoin
+Comment=Ultrapaycoin P2P Cryptocurrency
+Comment[fr]=Ultrapaycoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Ultrapaycoin, eşten eşe kriptografik sanal para birimi
+Exec=ultrapaycoin-qt %u
+Terminal=false
+Type=Application
+Icon=ultrapaycoin128
+MimeType=x-scheme-handler/ultrapaycoin;
+Categories=Office;Finance;
