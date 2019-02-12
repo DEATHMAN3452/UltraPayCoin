@@ -1,1 +1,2 @@
-// No build information available
+#define BUILD_SUFFIX 430ef83-dirty
+#define BUILD_DATE "2019-02-12 14:02:54 +0300"
