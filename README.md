@@ -2,7 +2,7 @@ UltraPayCoin (fork of PIVX) integration/staging repository
 ======================================
 
 
-It is recommended [use the shell script](https://https://github.com/upc-dev-team//UPCinstall) to install a UltraPayCoin Masternode on a Linux server running Ubuntu 14.04 or 16.04
+It is recommended [use the shell script](https://https://github.com/upc-dev-team/UPCinstall) to install a UltraPayCoin Masternode on a Linux server running Ubuntu 14.04 or 16.04
 
 ***
 
