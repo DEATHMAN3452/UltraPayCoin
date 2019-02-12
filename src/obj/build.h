@@ -1,2 +1,2 @@
-#define BUILD_SUFFIX c85e2fe-dirty
-#define BUILD_DATE "2019-02-12 17:38:18 +0300"
+#define BUILD_SUFFIX 6c34992-dirty
+#define BUILD_DATE "2019-02-12 19:32:05 +0300"

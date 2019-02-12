@@ -1602,7 +1602,7 @@ bool CWallet::MintableCoins()
     AvailableCoins(vCoins, true);
 
     BOOST_FOREACH (const COutput& out, vCoins) {
-        if (out.Value() <= Params().Stake_MinAmount())
+        if (out.Value() < Params().Stake_MinAmount())
             continue;
         if (GetTime() - out.tx->GetTxTime() > nStakeMinAge)
             return true;

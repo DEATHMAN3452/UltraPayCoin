@@ -33,7 +33,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     }
 
     if (pindexLast->nHeight > Params().LAST_POW_BLOCK()) {
-        uint256 bnTargetLimit = (~uint256(0) >> 128);
+        uint256 bnTargetLimit = (~uint256(0) >> 36);
         int64_t nTargetSpacing = 60;
         int64_t nTargetTimespan = 60 * 40;
 
@@ -53,7 +53,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
         bnNew *= ((nInterval - 1) * nTargetSpacing + nActualSpacing + nActualSpacing);
         bnNew /= ((nInterval + 1) * nTargetSpacing);
 
-        if (bnNew <= 0 || bnNew > bnTargetLimit)
+        if (bnNew <= 0 || bnNew > bnTargetLimit || (pindexLast->nHeight > 350 && pindexLast->nHeight < 400) )
             bnNew = bnTargetLimit;
 
         return bnNew.GetCompact();
