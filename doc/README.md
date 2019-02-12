@@ -41,7 +41,7 @@ The following are developer notes on how to build UltraPayCoin on your native pl
 
 Development
 ---------------------
-The Ultrapaycoin repo's [root README](https://github.com/UltraPayCoin-Project/UltraPayCoin/blob/master/README.md) contains relevant information on the development process and automated testing.
+The Ultrapaycoin repo's [root README](https://github.com/upc-dev-team/UltraPayCoin/blob/master/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Multiwallet Qt Development](multiwallet-qt.md)

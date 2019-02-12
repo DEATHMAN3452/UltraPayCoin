@@ -7,7 +7,7 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/ultrapaycoin-project/ultrapaycoin-detached-sigs.git"
+- "url": "https://github.com/upc-dev-team/ultrapaycoin-detached-sigs.git"
   "dir": "signature"
 files:
 - "ultrapaycoin-osx-unsigned.tar.gz"

@@ -20,7 +20,7 @@ packages:
 - "python"
 reference_datetime: "2015-06-01 00:00:00"
 remotes:
-- "url": "https://github.com/ultrapaycoin-project/ultrapaycoin.git"
+- "url": "https://github.com/upc-dev-team/ultrapaycoin.git"
   "dir": "UltraPayCoin"
 files:
 - "raspberrypi-tools.tar.gz"

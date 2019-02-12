@@ -12,8 +12,8 @@ When a "Transaction Lock" occurs the hash of the related transaction is broadcas
 * `zmqpubhashtxlock`: publishes the transaction hash when locked via SwiftTX
 
 This mechanism has been integrated into Bitcore-Node-UltraPayCoin which allows for notification to be broadcast through Insight API in one of two ways:
-* WebSocket: [https://github.com/UltraPayCoin-Project/insight-api-ultrapaycoin#web-socket-api](https://github.com/UltraPayCoin-Project/insight-api-ultrapaycoin#web-socket-api) 
-* API: [https://github.com/UltraPayCoin-Project/insight-api-ultrapaycoin#swifttx-transactions](https://github.com/UltraPayCoin-Project/insight-api-ultrapaycoin#swifttx-transactions) 
+* WebSocket: [https://github.com/upc-dev-team/insight-api-ultrapaycoin#web-socket-api](https://github.com/upc-dev-team/insight-api-ultrapaycoin#web-socket-api) 
+* API: [https://github.com/upc-dev-team/insight-api-ultrapaycoin#swifttx-transactions](https://github.com/upc-dev-team/insight-api-ultrapaycoin#swifttx-transactions) 
 
 ####Command line option
 

@@ -1,13 +1,13 @@
 UltraPayCoin Core version 2.3.1 is now available from:
 
-  <https://github.com/ultrapaycoin-project/ultrapaycoin/releases>
+  <https://github.com/upc-dev-team/ultrapaycoin/releases>
 
 This is a new minor version release, including various bug fixes and
 performance improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/ultrapaycoin-project/ultrapaycoin/issues>
+  <https://github.com/upc-dev-team/ultrapaycoin/issues>
 
 Compatibility
 ==============
@@ -205,4 +205,4 @@ Thanks to everyone who directly contributed to this release:
 - Mrs-X
 - amirabrams
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/ultrapaycoin-project-translations/).
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/upc-dev-team-translations/).

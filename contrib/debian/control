@@ -23,8 +23,8 @@ Build-Depends: debhelper,
  libprotobuf-dev, protobuf-compiler
 Standards-Version: 3.9.2
 Homepage: http://www.ultrapaycoin.org
-Vcs-Git: git://github.com/UltraPayCoin-Project/UltraPayCoin.git
-Vcs-Browser: http://github.com/UltraPayCoin-Project/UltraPayCoin
+Vcs-Git: git://github.com/upc-dev-team/UltraPayCoin.git
+Vcs-Browser: http://github.com/upc-dev-team/UltraPayCoin
 
 Package: ultrapaycoind
 Architecture: any

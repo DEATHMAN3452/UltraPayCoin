@@ -2,7 +2,7 @@ UltraPayCoin (fork of PIVX) integration/staging repository
 ======================================
 
 
-It is recommended [use the shell script](https://github.com/UPCproject/UPCinstall) to install a UltraPayCoin Masternode on a Linux server running Ubuntu 14.04 or 16.04
+It is recommended [use the shell script](https://https://github.com/upc-dev-team//UPCinstall) to install a UltraPayCoin Masternode on a Linux server running Ubuntu 14.04 or 16.04
 
 ***
 
@@ -19,7 +19,7 @@ Installation of libraries (using root user):
 Cloning the repository and compiling (use any user with the sudo group):
 
     cd
-    git clone https://github.com/UPCproject/UltraPayCoin.git
+    git clone https://github.com/upc-dev-team/UltraPayCoin.git
     cd UltraPayCoin
     ./autogen.sh
     ./configure
@@ -45,7 +45,7 @@ Demon status:
 
 All binaries for different operating systems, you can download in the releases repository:
 
-https://github.com/UPCproject/UltraPayCoin/releases
+https://github.com/upc-dev-team/UltraPayCoin/releases
 
 P2P port: 13333, RPC port: 13334
 -
