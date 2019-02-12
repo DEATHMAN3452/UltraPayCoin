@@ -89,10 +89,10 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("00000773d0a50a38f8efd5d63a5d0040f9d4987275769e0e575188f871bf2d8a"));
+    (0, uint256("00000e516539fc02885bdc4f624705b1b0441b3180a28dca7d5bde7fed9e4120"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1549972608, // * UNIX timestamp of last checkpoint block
+    1549987768, // * UNIX timestamp of last checkpoint block
     0,          // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
@@ -102,7 +102,7 @@ static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
     boost::assign::map_list_of(0, uint256("0x001"));
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
-    1549972608,
+    1549987768,
     0,
     250};
 
@@ -110,7 +110,7 @@ static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
     boost::assign::map_list_of(0, uint256("0x001"));
 static const Checkpoints::CCheckpointData dataRegtest = {
     &mapCheckpointsRegtest,
-    1549972608,
+    1549987768,
     0,
     100};
 
@@ -126,10 +126,10 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 4-byte int at any alignment.
          */
-        pchMessageStart[0] = 0x6e;
-        pchMessageStart[1] = 0x73;
-        pchMessageStart[2] = 0x2f;
-        pchMessageStart[3] = 0x5a;
+        pchMessageStart[0] = 0x5e;
+        pchMessageStart[1] = 0x43;
+        pchMessageStart[2] = 0x1f;
+        pchMessageStart[3] = 0x7a;
         vAlertPubKey = ParseHex("040d75796902e3eda97815d744328237872309a95b42a74b22d7580e56b086fbc19ae1d6ef30c9e27d060c9c48692a663b9a321161e19f853ca6a6499cba7d17f6");
         nDefaultPort = 13333;
         bnProofOfWorkLimit = ~uint256(0) >> 2;
@@ -170,11 +170,12 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1549972608;
+        genesis.nTime = 1549987768;
         genesis.nBits = 0x1e0ffff0; 
-        genesis.nNonce = 4376452;
+        genesis.nNonce = 5471617;
+        
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("00000773d0a50a38f8efd5d63a5d0040f9d4987275769e0e575188f871bf2d8a"));
+        assert(hashGenesisBlock == uint256("00000e516539fc02885bdc4f624705b1b0441b3180a28dca7d5bde7fed9e4120"));
         assert(genesis.hashMerkleRoot == uint256("3083d34882423f606f0d725a683a910ccb8fb2c3ee798dea12ac226d463ec6ca"));
 
         //vSeeds.push_back(CDNSSeedData("0", "0"));         // Single node address
@@ -202,7 +203,7 @@ public:
         nPoolMaxTransactions = 3;
         strSporkKey = "04352D1DA4428D6BB7EAD5BAC6C36EDEA3B9042902310952DB99DEB7DF08378DEE5C0053CAA80B67B8AB78B4B7C1EE626D7EBA27E51C7A87DA4027C72B6D882885";
         strObfuscationPoolDummyAddress = "UXnjYZ5AuE2AqYdtyt5MZP1cJJxpzEXrjM";
-        nStartMasternodePayments = 1549972608; 
+        nStartMasternodePayments = 1549987768; 
         nStakeMinAmount = 500 * COIN;
     }
 
