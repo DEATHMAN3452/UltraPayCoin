@@ -127,7 +127,7 @@ public:
          * a large 4-byte int at any alignment.
          */
         pchMessageStart[0] = 0x6e;
-        pchMessageStart[1] = 0x72;
+        pchMessageStart[1] = 0x73;
         pchMessageStart[2] = 0x2f;
         pchMessageStart[3] = 0x5a;
         vAlertPubKey = ParseHex("040d75796902e3eda97815d744328237872309a95b42a74b22d7580e56b086fbc19ae1d6ef30c9e27d060c9c48692a663b9a321161e19f853ca6a6499cba7d17f6");
@@ -143,7 +143,7 @@ public:
         nMinerThreads = 0;
         nTargetTimespan = 1 * 60; // UltraPayCoin: 1 day
         nTargetSpacing = 1 * 60;  // UltraPayCoin: 1 minute
-        nLastPOWBlock = 300;
+        nLastPOWBlock = 350;
         nMaturity = 150;
         nMasternodeCountDrift = 20;
         nModifierUpdateBlock = 615800;
