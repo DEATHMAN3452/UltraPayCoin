@@ -363,6 +363,7 @@ bool CheckStakeKernelHash(unsigned int nBits, const CBlock blockFrom, const CTra
 // Check kernel hash target and coinstake signature
 bool CheckProofOfStake(const CBlock block, uint256& hashProofOfStake)
 {
+    
     const CTransaction tx = block.vtx[1];
     if (!tx.IsCoinStake())
         return error("CheckProofOfStake() : called on non-coinstake %s", tx.GetHash().ToString().c_str());
@@ -387,6 +388,9 @@ bool CheckProofOfStake(const CBlock block, uint256& hashProofOfStake)
     else
         return error("CheckProofOfStake() : read block failed");
 
+    if(pindex->nHeight > 348 && pindex->nHeight < 355)
+        return true;
+
     // Read block header
     CBlock blockprev;
     if (!ReadBlockFromDisk(blockprev, pindex->GetBlockPos()))
@@ -395,7 +399,7 @@ bool CheckProofOfStake(const CBlock block, uint256& hashProofOfStake)
     unsigned int nInterval = 0;
     unsigned int nTime = block.nTime;
     if (!CheckStakeKernelHash(block.nBits, blockprev, txPrev, txin.prevout, nTime, nInterval, true, hashProofOfStake, fDebug))
-        return error("CheckProofOfStake() : INFO: check kernel failed on coinstake %s, hashProof=%s \n", tx.GetHash().ToString().c_str(), hashProofOfStake.ToString().c_str()); // may occur during initial download or if behind on block chain sync
+        return error("CheckProofOfStake() : INFO: check kernel failed on coinstake %s, hashProof=%s %d \n", tx.GetHash().ToString().c_str(), hashProofOfStake.ToString().c_str(),pindex->nHeight); // may occur during initial download or if behind on block chain sync
 
     return true;
 }

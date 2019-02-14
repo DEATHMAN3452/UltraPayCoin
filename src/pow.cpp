@@ -53,7 +53,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
         bnNew *= ((nInterval - 1) * nTargetSpacing + nActualSpacing + nActualSpacing);
         bnNew /= ((nInterval + 1) * nTargetSpacing);
 
-        if (bnNew <= 0 || bnNew > bnTargetLimit || (pindexLast->nHeight > 350 && pindexLast->nHeight < 400) )
+        if (bnNew <= 0 || bnNew > bnTargetLimit || (pindexLast->nHeight > 351 && pindexLast->nHeight < 400) )
             bnNew = bnTargetLimit;
 
         return bnNew.GetCompact();
