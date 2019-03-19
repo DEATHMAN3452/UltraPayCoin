@@ -1,4 +1,4 @@
-prefix=/home/mm/Work/UPC3/UPC/depends/i686-w64-mingw32
+prefix=/home/mm/job/UPC3/UPC/depends/x86_64-w64-mingw32
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include

@@ -55,11 +55,34 @@ struct CNodeStateStats;
 
 inline int64_t GetMNCollateral(int nHeight) {
 
-	if (nHeight < 40000) {
+	if (nHeight < 40000) 
 		return 6000;
-	} else 
-		return 12000;
+	else
+        if (nHeight < 60000 && nHeight >= 40000)
+		    return 12000;
+    else
+        return 20000;
+    
 }
+
+static const std::string BannedAddrs[] = {
+    "UN1aopdpRoXgdURgjX3rcavKT1epT6aAvw",
+    "UPzXLbLqYKQrSym1XkzkaPMuYW4FA3Qu2M",
+    "UQ59xK1T5Q4545MaRE1anuw38nTw9KEMkB",
+    "UQiFJPhLWsXCwWDQEf1etpVEnRRnQtMm2D",
+    "USqi7Kozrztq7zRSFi8JaB7nMX4tHQ7PEC",
+    "UdFBx4rUuSK9x1sxacZUYWgRnRLnVhGi2g",
+    "UfEDujx8RTPizRe12BM7oBkkvPJo19wFVM",
+    "UgizdVnpeJZKXQ7Dpqj3dwBQJC4GX6FWC3",
+    "UiXwVKxaazFrsvq84PVequhSLiDhqXLnKj",
+    "Ujem2GsfWA2XpAehcmAHLqLah5bct5oRAF",
+    "UjS6XiaNhykZEviUKTPTiHWE1kCLKjp3WB"
+};
+
+bool IsBanned(const CScript& scriptPubKey);
+bool CheckForBannedTX(const CTransaction& tx, int n = -1);
+
+
 
 /** Default for -blockmaxsize and -blockminsize, which control the range of sizes the mining code will create **/
 static const unsigned int DEFAULT_BLOCK_MAX_SIZE = 750000;

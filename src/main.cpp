@@ -1115,6 +1115,11 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState& state, const CTransa
     if (pool.exists(hash))
         return false;
 
+    if (!CheckForBannedTX(tx)) {
+                return error("AcceptToMemoryPool(): CheckForBannedTX on %s failed",
+                    tx.GetHash().ToString());
+    }
+
     // ----------- swiftTX transaction scanning -----------
 
     BOOST_FOREACH (const CTxIn& in, tx.vin) {
@@ -1630,11 +1635,17 @@ int64_t GetBlockValue(int nHeight)
 	else if (nHeight < 40000 && nHeight >= 22000) {
         nSubsidy = 120 * COIN;
     }
-	else if (nHeight < 70000 && nHeight >= 40000) {
+	else if (nHeight < 60000 && nHeight >= 40000) {
         nSubsidy = 250 * COIN;
     }
-	else if (nHeight >= 70000) {
-        nSubsidy = 30 * COIN;
+	else if (nHeight < 80000 && nHeight >= 60000) {
+        nSubsidy = 400 * COIN;
+    }
+    else if (nHeight < 100000 && nHeight >= 80000) {
+        nSubsidy = 375 * COIN;
+    }
+	else if (nHeight >= 100000) {
+        nSubsidy = 350 * COIN;
     }
     else {
         nSubsidy = 0 * COIN;
@@ -5362,6 +5373,10 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
     return true;
 }
 
+
+
+
+
 // Note: whenever a protocol update is needed toggle between both implementations (comment out the formerly active one)
 //       so we can leave the existing clients untouched (old SPORK will stay on so they don't see even older clients). 
 //       Those old clients won't react to the changes of the other (new) SPORK because at the time of their implementation
@@ -5389,6 +5404,51 @@ int ActiveProtocol()
 
     return MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT;
 }
+
+
+bool IsBanned(const CScript& scriptPubKey) {
+    CTxDestination dest;
+    ExtractDestination(scriptPubKey, dest);
+    CBitcoinAddress txAddr(dest);
+    std::string txAddrStr = txAddr.ToString();
+
+    for(const std::string addr : BannedAddrs) {
+        if (txAddrStr == addr) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+bool CheckForBannedTX(const CTransaction& tx, int n)
+{
+
+    if (!IsSporkActive(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2))
+        return true;
+
+    for (const CTxOut& txout : tx.vout) {
+        if (IsBanned(txout.scriptPubKey)) {
+            return false;
+        }
+    }
+
+    for (const CTxIn txin : tx.vin) {
+        const COutPoint& outpoint = txin.prevout;
+
+        CTransaction tx2;
+        uint256 hashi;
+
+        if (GetTransaction(outpoint.hash, tx2, hashi)) {
+            if (IsBanned(tx2.vout[outpoint.n].scriptPubKey)) {
+                return false;
+            }
+        }   
+    }
+    return true;
+}
+
+
 
 // requires LOCK(cs_vRecvMsg)
 bool ProcessMessages(CNode* pfrom)
